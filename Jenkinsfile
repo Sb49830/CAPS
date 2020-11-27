@@ -39,4 +39,3 @@ node(){
       cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin'
   }
 }
-}
