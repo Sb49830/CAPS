@@ -17,10 +17,14 @@
  */
 String pipelineVersion = "master"
 
-library "s4sdk-pipeline-library@${pipelineVersion}"
-cloudSdkPipeline(script: this)
+/*library "s4sdk-pipeline-library@${pipelineVersion}"
+cloudSdkPipeline(script: this)*/
+
+/*general:
+  buildTool: 'npm'*/
+@Library('piper-lib-os') _
 node() {
-stage('prepare') {
+    stage('prepare') {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
