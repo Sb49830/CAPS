@@ -23,7 +23,7 @@ cloudSdkPipeline(script: this)*/
 /*general:
   buildTool: 'npm'*/
 @Library('piper-lib-os') _
-set verbose:true
+verbose:true
 node(){
   stage('Prepare')   {
       deleteDir()
