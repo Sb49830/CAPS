@@ -2,3 +2,4 @@ general:
   productiveBranch: gpp
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
+  gitSshKeyCredentialsId: Sbasu
