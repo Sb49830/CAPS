@@ -22,6 +22,7 @@ general:
   productiveBranch: 'master'
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
+  buildTool: 'mta'
 
 ### Step-specific configuration
 steps:
@@ -70,7 +71,7 @@ stages:
 
 +fortifyExecuteScan:
   +buildTool: 'mta' 
-
+  buildExecute script:this, buildTool: 'maven'
 
 #  integrationTests:
 #    credentials:
