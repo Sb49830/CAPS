@@ -21,11 +21,7 @@
 general:
 
   productiveBranch: 'master'
-  legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
-  inferBuildTool: true
-  buildTool: 'mta'
-  gitSshKeyCredentialsId: 'Sbasu'
- 
+  
 
 ### Step-specific configuration
 steps:
@@ -62,20 +58,7 @@ steps:
       manifest: 'mta.yaml'
       credentialsId: 'Sbasu'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'  
-   
-dockerExecute:
-    dockerPullImage: true
-    sidecarPullImage: true
-    stashContent: []
 
-dockerExecuteOnKubernetes:
-    dockerPullImage: true
-    sidecarPullImage: true
-    stashContent: []
-    stashIncludes:
-      workspace: '**/*'
-    stashExcludes:
-      workspace: 'nohup.out
 
      
 ### Stage-specific configuration
@@ -83,17 +66,7 @@ stages:
 + 'Pull-Request Voting':
 +   customVotingBranch: 'master'
 
-+ 'Build':
-+   mavenExecuteStaticCodeChecks: true
-+   npmExecuteLint: true
 
-+ Confirm:
-+   manualConfirmation: false
-
-
-+fortifyExecuteScan:
-  +buildTool: 'mta' 
-  buildExecute script:this, buildTool: 'maven'
 
 #  integrationTests:
 #    credentials:
