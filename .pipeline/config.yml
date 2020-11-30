@@ -19,7 +19,7 @@
 
 ### General project setup
 general:
-  productiveBranch: 'master'
+  productiveBranch: gpp
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
 
@@ -28,10 +28,20 @@ steps:
   #mavenExecute:
    # dockerImage: devxci/mbtci:1.0.14
 
+   #piperPipelineStageInit script: parameters.script, customDefaults: ['com.sap.piper/pipeline/stageOrdinals.yml'].plus(parameters.customDefaults ?: [])
+piperPipelineStageBuild script: parameters.script    
+
 
 ### Stage-specific configuration
 stages:
++ Init:
+ piperPipelineStageInit script: parameters.script
 
++ Build:
+    when {branch parameters.script.commonPipelineEnvironment.getStepConfiguration('', '').productiveBranch}
+          
++ Confirm:
++   manualConfirmation: false
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
