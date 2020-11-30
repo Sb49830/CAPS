@@ -19,8 +19,8 @@
 
 ### General project setup
 general:
-  productiveBranch: 'master'
-
+  productiveBranch: gpp
+  inferBuildTool: true
 ### Step-specific configuration
 steps:
  mavenExecute:
@@ -41,7 +41,9 @@ steps:
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'   
 ### Stage-specific configuration
 stages:
-
++ 'Build':
++   mavenExecuteStaticCodeChecks: true
++   npmExecuteLint: true
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
