@@ -52,10 +52,6 @@ steps:
 
 stages:
 
-
-+ 'Pull-Request Voting':
-+   customVotingBranch: 'master'
-
 + 'Build':
 +   mavenExecuteStaticCodeChecks: true
 +   npmExecuteLint: true
