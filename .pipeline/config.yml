@@ -23,6 +23,7 @@ general:
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
   buildTool: 'mta'
+  gitSshKeyCredentialsId: 'Sbasu'
  
 
 ### Step-specific configuration
