@@ -51,7 +51,7 @@ steps:
 
 whitesourceExecuteScan:
      stashContent:
-      - 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
+      - 'package.json'
      
 ### Stage-specific configuration
 
