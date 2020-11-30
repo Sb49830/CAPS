@@ -1,6 +1,6 @@
 general:
  # export ON_K8S: true
-  #buildTool: 'mta'
+  buildTool: 'mta'
   #gitSshKeyCredentialsId: 'Sbasu'
   #productiveBranch: 'master'
   #verbose: true
