@@ -19,9 +19,10 @@
 
 ### General project setup
 general:
-  productiveBranch: master  
+  productiveBranch: 'master'
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
+
 ### Step-specific configuration
 steps:
  mavenExecute:
@@ -48,18 +49,29 @@ steps:
       filePath: 'package.json'
       versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
 
+whitesourceExecuteScan:
+     stashContent:
+      - 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
+     
 ### Stage-specific configuration
 
+
 stages:
++ 'Pull-Request Voting':
++   customVotingBranch: 'master'
 
 + 'Build':
 +   mavenExecuteStaticCodeChecks: true
 +   npmExecuteLint: true
+
 + Confirm:
 +   manualConfirmation: false
 
+
 fortifyExecuteScan:
   +buildTool: 'maven' 
+
+
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
