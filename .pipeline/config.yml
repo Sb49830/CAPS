@@ -19,6 +19,7 @@
 
 ### General project setup
 general:
+
   productiveBranch: 'master'
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
@@ -78,8 +79,6 @@ dockerExecuteOnKubernetes:
 
      
 ### Stage-specific configuration
-
-
 stages:
 + 'Pull-Request Voting':
 +   customVotingBranch: 'master'
