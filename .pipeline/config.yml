@@ -12,15 +12,8 @@ stages:
 + Confirm:
 +   manualConfirmation: false
 
-+ 'Build':
-+   mavenExecuteStaticCodeChecks: true
-+   npmExecuteLint: true
 
 steps:
-  whitesourceExecuteScan:
-    ...
-+   stashContent:
-+     - 'source'
+
 fortifyExecuteScan:
-    ...
-+   buildTool: 'maven'
+  +   buildTool: 'mta'
