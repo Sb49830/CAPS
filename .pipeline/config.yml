@@ -27,8 +27,8 @@ general:
 
 ### Step-specific configuration
 steps:
- mavenExecute:
- dockerImage: devxci/mbtci:1.0.14
+ #mavenExecute:
+ #dockerImage: devxci/mbtci:1.0.14
 
  setupCommonPipelineEnvironment:
     
