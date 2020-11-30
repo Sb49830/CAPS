@@ -28,7 +28,7 @@ steps:
  dockerImage: devxci/mbtci:1.0.14
 
  setupCommonPipelineEnvironment:
-   # collectTelemetryData: false
+    collectTelemetryData: false
 
     cloudFoundryDeploy:
     dockerImage: 'ppiper/cf-cli'
@@ -39,7 +39,10 @@ steps:
       appName: 'MTBookshopNode'
       manifest: 'mta.yaml'
       credentialsId: 'Sbasu'
-      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'   
+      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'  
+
+fortifyExecuteScan:
+  +buildTool: 'maven' 
 ### Stage-specific configuration
 
 stages:
