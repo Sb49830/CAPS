@@ -22,7 +22,7 @@ general:
   productiveBranch: 'master'
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
-  buildTool: 'npm'
+  buildTool: 'mta'
  
 
 ### Step-specific configuration
