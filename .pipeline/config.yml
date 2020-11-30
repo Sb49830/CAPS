@@ -28,6 +28,7 @@ steps:
  dockerImage: devxci/mbtci:1.0.14
 
  setupCommonPipelineEnvironment:
+    
     collectTelemetryData: false
 
     cloudFoundryDeploy:
@@ -41,8 +42,7 @@ steps:
       credentialsId: 'Sbasu'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'  
 
-fortifyExecuteScan:
-  +buildTool: 'maven' 
+
 ### Stage-specific configuration
 
 stages:
@@ -57,6 +57,8 @@ stages:
 + Confirm:
 +   manualConfirmation: false
 
+fortifyExecuteScan:
+  +buildTool: 'maven' 
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
