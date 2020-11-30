@@ -20,11 +20,13 @@
 ### General project setup
 general:
   productiveBranch: 'master'
+  legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
+  inferBuildTool: true
 
 ### Step-specific configuration
 steps:
-  mavenExecute:
-    dockerImage: devxci/mbtci:1.0.14
+  #mavenExecute:
+   # dockerImage: devxci/mbtci:1.0.14
 
 
 ### Stage-specific configuration
