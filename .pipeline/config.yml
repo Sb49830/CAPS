@@ -19,7 +19,8 @@
 
 ### General project setup
 general:
-  productiveBranch: gpp
+  productiveBranch: gpp  
+  legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
 ### Step-specific configuration
 steps:
@@ -40,10 +41,17 @@ steps:
       credentialsId: 'Sbasu'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'   
 ### Stage-specific configuration
+
 stages:
+
++ 'Pull-Request Voting':
++   customVotingBranch: 'MY-PREFIX-*'
+
 + 'Build':
 +   mavenExecuteStaticCodeChecks: true
 +   npmExecuteLint: true
++ Confirm:
++   manualConfirmation: false
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
