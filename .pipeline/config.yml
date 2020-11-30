@@ -29,7 +29,7 @@ steps:
 
  setupCommonPipelineEnvironment:
     
-    collectTelemetryData: false
+    collectTelemetryData: true
 
     cloudFoundryDeploy:
     dockerImage: 'ppiper/cf-cli'
@@ -41,7 +41,12 @@ steps:
       manifest: 'mta.yaml'
       credentialsId: 'Sbasu'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'  
-
+    mta:
+      filePath: 'mta.yaml'
+      versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
+    npm:
+      filePath: 'package.json'
+      versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
 
 ### Stage-specific configuration
 
