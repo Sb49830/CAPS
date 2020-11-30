@@ -6,8 +6,7 @@ general:
   script: this
 
   step:
-  commonPipelineEnvironment:
-  
+    
       buildExecute:
         buildTool: 'mta'
         npmInstall: true
