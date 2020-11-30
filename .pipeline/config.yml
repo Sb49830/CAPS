@@ -22,7 +22,8 @@ general:
   productiveBranch: 'master'
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
-  buildTool: 'mta'
+  #buildTool: 'mta'
+  buildTool: 'maven'
 
 ### Step-specific configuration
 steps:
@@ -43,12 +44,12 @@ steps:
       manifest: 'mta.yaml'
       credentialsId: 'Sbasu'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'  
-    mta:
-      filePath: 'mta.yaml'
-      versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
-    npm:
-      filePath: 'package.json'
-      versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
+   #mta:
+     # filePath: 'mta.yaml'
+      #versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
+    #npm:
+     # filePath: 'package.json'
+      #versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
 
 whitesourceExecuteScan:
      stashContent:
