@@ -18,3 +18,4 @@
 @Library('piper-lib-os') _
 
 piperPipeline script: this
+npmExecuteScripts script: this
