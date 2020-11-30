@@ -3,3 +3,24 @@ general:
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
   gitSshKeyCredentialsId: Sbasu
+
+stages:
++ 'Pull-Request Voting':
++   customVotingBranch: 'MY-PREFIX-*'
+
+
++ Confirm:
++   manualConfirmation: false
+
++ 'Build':
++   mavenExecuteStaticCodeChecks: true
++   npmExecuteLint: true
+
+steps:
+  whitesourceExecuteScan:
+    ...
++   stashContent:
++     - 'source'
+fortifyExecuteScan:
+    ...
++   buildTool: 'maven'
