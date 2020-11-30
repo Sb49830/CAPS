@@ -23,10 +23,22 @@ general:
 
 ### Step-specific configuration
 steps:
-  mavenExecute:
-    dockerImage: devxci/mbtci:1.0.14
+ mavenExecute:
+ dockerImage: devxci/mbtci:1.0.14
 
+ setupCommonPipelineEnvironment:
+    collectTelemetryData: true
 
+    cloudFoundryDeploy:
+    dockerImage: 'ppiper/cf-cli'
+    smokeTestStatusCode: '200'
+    cloudFoundry:
+      org: '352294e9trial'
+      space: 'dev'
+      appName: 'MTBookshopNode'
+      manifest: 'mta.yaml'
+      credentialsId: 'Sbasu'
+      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'   
 ### Stage-specific configuration
 stages:
 
