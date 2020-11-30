@@ -3,3 +3,12 @@ general:
   gitSshKeyCredentialsId: 'Sbasu'
   productiveBranch: 'master'
   verbose: true
+  script: this
+
+  step:
+  commonPipelineEnvironment:
+  
+      buildExecute:
+        buildTool: 'mta'
+        npmInstall: true
+   
