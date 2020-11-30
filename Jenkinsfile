@@ -15,6 +15,6 @@
  * Set pipelineVersion to a fixed released version (e.g. "v35") when running in a productive environment.
  * To find out about available versions and release notes, visit: https://github.com/SAP/cloud-s4-sdk-pipeline/releases
  */
-@Library('piper-lib-os') _
+@Library('piper-lib-os@versionX') _
 
 piperPipeline script: this
