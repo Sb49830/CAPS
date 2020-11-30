@@ -19,7 +19,7 @@
 
 ### General project setup
 general:
-  productiveBranch: gpp  
+  productiveBranch: master  
   legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
   inferBuildTool: true
 ### Step-specific configuration
@@ -46,7 +46,7 @@ stages:
 
 
 + 'Pull-Request Voting':
-+   customVotingBranch: 'gpp'
++   customVotingBranch: 'master'
 
 + 'Build':
 +   mavenExecuteStaticCodeChecks: true
