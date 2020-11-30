@@ -40,8 +40,8 @@ stages:
 + Build:
     when {branch parameters.script.commonPipelineEnvironment.getStepConfiguration('', '').productiveBranch}
           
-+ Confirm:
-+   manualConfirmation: false
+#+ Confirm:
+#+   manualConfirmation: false
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
