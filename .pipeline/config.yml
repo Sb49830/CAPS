@@ -68,8 +68,8 @@ stages:
 +   manualConfirmation: false
 
 
-fortifyExecuteScan:
-  +buildTool: 'maven' 
++fortifyExecuteScan:
+  +buildTool: 'mta' 
 
 
 #  integrationTests:
