@@ -30,7 +30,7 @@ steps:
 
    #piperPipelineStageInit script: parameters.script, customDefaults: ['com.sap.piper/pipeline/stageOrdinals.yml'].plus(parameters.customDefaults ?: [])
 piperPipelineStageBuild script: parameters.script    
-
+piperPipelineStagePRVoting script: parameters.script
 
 ### Stage-specific configuration
 stages:
@@ -39,7 +39,9 @@ stages:
 
 + Build:
     when {branch parameters.script.commonPipelineEnvironment.getStepConfiguration('', '').productiveBranch}
-          
++ Pull-Request Voting:
+     when { anyOf { branch 'PR-*'; branch parameters.script.commonPipelineEnvironment.getStepConfiguration('piperPipelineStagePRVoting', 'Pull-Request Voting').customVotingBranch } }
+                     
 + Confirm:
 +   manualConfirmation: false
 #  integrationTests:
