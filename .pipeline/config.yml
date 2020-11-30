@@ -3,7 +3,7 @@ general:
   buildTool: 'mta'
   gitSshKeyCredentialsId: 'Sbasu'
   productiveBranch: 'master'
-  #verbose: true
+  verbose: true
 #  jenkinsKubernetes/inheritFrom: true
  # jenkinsKubernetes/jnlpAgent: true
   #jenkinsKubernetes/namespace: true
