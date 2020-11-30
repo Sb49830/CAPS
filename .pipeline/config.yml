@@ -2,7 +2,7 @@ general:
  # export ON_K8S: true
   buildTool: 'mta'
   gitSshKeyCredentialsId: 'Sbasu'
-  #productiveBranch: 'master'
+  productiveBranch: 'master'
   #verbose: true
 #  jenkinsKubernetes/inheritFrom: true
  # jenkinsKubernetes/jnlpAgent: true
