@@ -28,7 +28,7 @@ steps:
  dockerImage: devxci/mbtci:1.0.14
 
  setupCommonPipelineEnvironment:
-    collectTelemetryData: true
+    collectTelemetryData: false
 
     cloudFoundryDeploy:
     dockerImage: 'ppiper/cf-cli'
