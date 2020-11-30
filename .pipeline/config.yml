@@ -36,8 +36,24 @@ steps:
     collectTelemetryData: true
 
     cloudFoundryDeploy:
+    
     dockerImage: 'ppiper/cf-cli'
     smokeTestStatusCode: '200'
+
+    stashContent:
+      - 'deployDescriptor'
+      - 'pipelineConfigAndTests'
+
+    cf_native:
+      dockerImage: 'ppiper/cf-cli'
+      dockerWorkspace: '/home/piper'
+
+    mtaDeployPlugin:
+      dockerImage: 'ppiper/cf-cli'
+      dockerWorkspace: '/home/piper'
+    mta:
+      deployTool: 'mtaDeployPlugin'
+
     cloudFoundry:
       org: '352294e9trial'
       space: 'dev'
@@ -45,16 +61,21 @@ steps:
       manifest: 'mta.yaml'
       credentialsId: 'Sbasu'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'  
-   #mta:
-     # filePath: 'mta.yaml'
-      #versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
-    #npm:
-     # filePath: 'package.json'
-      #versioningTemplate: '${version}-${timestamp}${commitId?"+"+commitId:""}'
+   
+dockerExecute:
+    dockerPullImage: true
+    sidecarPullImage: true
+    stashContent: []
 
-whitesourceExecuteScan:
-     stashContent:
-      - 'package.json'
+dockerExecuteOnKubernetes:
+    dockerPullImage: true
+    sidecarPullImage: true
+    stashContent: []
+    stashIncludes:
+      workspace: '**/*'
+    stashExcludes:
+      workspace: 'nohup.out
+
      
 ### Stage-specific configuration
 
