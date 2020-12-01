@@ -20,7 +20,7 @@
 ### General project setup
 general:
   productiveBranch: 'master'
-  buildTool: 'npm'
+  buildTool: 'mta'
   gitSshKeyCredentialsId: 'Sbasu'
   
 
@@ -31,7 +31,8 @@ steps:
     #
   
   build:
-    buildTool: 'npm'
+   mtaBuild:
+    buildTarget: 'CF'
     #dockerCommand: 'execute'
     #dockerImage: 'ppiper/jenkins-master'
 #piperPipelineStageInit script: parameters.script, customDefaults: ['com.sap.piper/pipeline/stageOrdinals.yml'].plus(parameters.customDefaults ?: [])
