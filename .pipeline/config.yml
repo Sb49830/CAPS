@@ -21,37 +21,21 @@
 general:
   productiveBranch: 'master'
   buildTool: 'mta'
-  gitSshKeyCredentialsId: 'Sbasu'
-  
 ### Step-specific configuration
 steps:
-  #MavinExecute: devxci/mbtci:1.0.14
-  #ppiper/jenkins-master
-  dockerImage : ppiper/jenkins-master
-
-  setupCommonPipelineEnvironment script: this
-  collectTelemetryData : true 
-
-mtaBuild:
-    platform: 'CF'
+  mtaBuild:
+    buildTarget: 'CF'
   
-cloudFoundryDeploy:
+    cloudFoundryDeploy:
     dockerImage: 'ppiper/cf-cli'
-    smokeTestStatusCode: '200' 
+    smokeTestStatusCode: '200'
     cloudFoundry:
       credentialsId: 'Sbasu'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       org: '352294e9trial'
       space: 'dev'
-    
-    #dockerCommand: 'execute'
-    #dockerImage: 'ppiper/jenkins-master'
-#piperPipelineStageInit script: parameters.script, customDefaults: ['com.sap.piper/pipeline/stageOrdinals.yml'].plus(parameters.customDefaults ?: [])
-#piperPipelineStageBuild script: parameters.script    
-#piperPipelineStagePRVoting script: parameters.script
-
 ### Stage-specific configuration
-#stages:
+stages:
 
 #  integrationTests:
 #    credentials:
