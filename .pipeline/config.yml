@@ -26,8 +26,9 @@ general:
 
 ### Step-specific configuration
 steps:
-  DockerExecute: ppiper/jenkins-master
-    #devxci/mbtci:1.0.14
+  #MavinExecute: devxci/mbtci:1.0.14
+  #ppiper/jenkins-master
+    #
   
   build:
     buildTool: 'mta'
