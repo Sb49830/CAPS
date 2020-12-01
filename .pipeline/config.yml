@@ -32,9 +32,18 @@ steps:
   setupCommonPipelineEnvironment script: this
   collectTelemetryData : true 
 
-  build:
-    mtaBuild:
-    buildTarget: 'CF'
+mtaBuild:
+    platform: 'CF'
+  
+cloudFoundryDeploy:
+    dockerImage: 'ppiper/cf-cli'
+    smokeTestStatusCode: '200' 
+    cloudFoundry:
+      credentialsId: 'Sbasu'
+      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+      org: '352294e9trial'
+      space: 'dev'
+    
     #dockerCommand: 'execute'
     #dockerImage: 'ppiper/jenkins-master'
 #piperPipelineStageInit script: parameters.script, customDefaults: ['com.sap.piper/pipeline/stageOrdinals.yml'].plus(parameters.customDefaults ?: [])
@@ -42,7 +51,7 @@ steps:
 #piperPipelineStagePRVoting script: parameters.script
 
 ### Stage-specific configuration
-stages:
+#stages:
 
 #  integrationTests:
 #    credentials:
