@@ -16,6 +16,6 @@
  * To find out about available versions and release notes, visit: https://github.com/SAP/cloud-s4-sdk-pipeline/releases
  */
 @Library('piper-lib-os') _
-
 piperPipeline script: this
 //npmExecuteScripts script: this
+fioriOnCloudPlatformPipeline script: this
