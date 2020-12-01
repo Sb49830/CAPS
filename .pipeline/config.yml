@@ -26,8 +26,14 @@ general:
 
 ### Step-specific configuration
 steps:
-  mavenExecute:
-    dockerImage: devxci/mbtci:1.0.14
+  DockerExecute:
+    dockerImage: ppiper/jenkins-master
+    #devxci/mbtci:1.0.14
+  
+  build:
+    buildTool: 'mta'
+    #dockerCommand: 'execute'
+    #dockerImage: 'ppiper/jenkins-master'
 #piperPipelineStageInit script: parameters.script, customDefaults: ['com.sap.piper/pipeline/stageOrdinals.yml'].plus(parameters.customDefaults ?: [])
 #piperPipelineStageBuild script: parameters.script    
 #piperPipelineStagePRVoting script: parameters.script
