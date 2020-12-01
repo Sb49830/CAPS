@@ -23,15 +23,17 @@ general:
   buildTool: 'mta'
   gitSshKeyCredentialsId: 'Sbasu'
   
-
 ### Step-specific configuration
 steps:
   #MavinExecute: devxci/mbtci:1.0.14
   #ppiper/jenkins-master
-    #
-  
+  dockerImage : ppiper/jenkins-master
+
+  setupCommonPipelineEnvironment script: this
+  collectTelemetryData : true 
+
   build:
-   mtaBuild:
+    mtaBuild:
     buildTarget: 'CF'
     #dockerCommand: 'execute'
     #dockerImage: 'ppiper/jenkins-master'
