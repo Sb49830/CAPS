@@ -19,30 +19,22 @@
 
 ### General project setup
 general:
-  productiveBranch: gpp
-  legacyConfigSettings: 'com.sap.piper/pipeline/cloudSdkToGppConfigSettings.yml'
-  inferBuildTool: true
+  productiveBranch: 'master'
+  buildTool: 'mta'
+  gitSshKeyCredentialsId: 'Sbasu'
+  
 
 ### Step-specific configuration
 steps:
-  #mavenExecute:
-   # dockerImage: devxci/mbtci:1.0.14
+  mavenExecute:
+    dockerImage: devxci/mbtci:1.0.14
 #piperPipelineStageInit script: parameters.script, customDefaults: ['com.sap.piper/pipeline/stageOrdinals.yml'].plus(parameters.customDefaults ?: [])
-piperPipelineStageBuild script: parameters.script    
-piperPipelineStagePRVoting script: parameters.script
+#piperPipelineStageBuild script: parameters.script    
+#piperPipelineStagePRVoting script: parameters.script
 
 ### Stage-specific configuration
 stages:
-+ Init:
- piperPipelineStageInit script: parameters.script
 
-+ Build:
-    when {branch parameters.script.commonPipelineEnvironment.getStepConfiguration('', '').productiveBranch}
-+ Pull-Request Voting:
-     when { anyOf { branch 'PR-*'; branch parameters.script.commonPipelineEnvironment.getStepConfiguration('piperPipelineStagePRVoting', 'Pull-Request Voting').customVotingBranch } }
-                     
-+ Confirm:
-+   manualConfirmation: false
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
