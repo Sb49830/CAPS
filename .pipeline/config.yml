@@ -26,8 +26,7 @@ general:
 
 ### Step-specific configuration
 steps:
-  DockerExecute:
-    dockerImage: ppiper/jenkins-master
+  DockerExecute: ppiper/jenkins-master
     #devxci/mbtci:1.0.14
   
   build:
